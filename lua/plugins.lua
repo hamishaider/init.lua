@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
   })
 
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+
   use({ "catppuccin/nvim", as = "catppuccin" })
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   use('nvim-treesitter/playground')
@@ -23,6 +24,12 @@ return require('packer').startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
   use('numToStr/Comment.nvim')
   use('ludovicchabant/vim-gutentags')
+
+  -- nvim-tree file explorer
+  use {
+      "kyazdani42/nvim-tree.lua",
+      requires = { "kyazdani42/nvim-web-devicons" }
+  }
 
   -- indentation guides
   use "lukas-reineke/indent-blankline.nvim"

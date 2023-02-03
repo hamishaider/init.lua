@@ -34,6 +34,13 @@ require("catppuccin").setup {
 			}
 		end,
 	},
+    integration = {
+        nvimtree = {
+            enabled = true,
+            show_root = false, -- makes the root folder not transparent
+            transparent_panel = true, -- make the panel transparent
+        },
+    },
 }
 
 vim.cmd.colorscheme "catppuccin"
