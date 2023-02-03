@@ -1,4 +1,5 @@
 vim.cmd "autocmd BufWritePre *.vim :lua vim.lsp.buf.format()"
+vim.cmd "autocmd BufWritePre *.lua :lua vim.lsp.buf.format()"
 vim.cmd "autocmd BufWritePre *.v :lua vim.lsp.buf.format()"
 vim.cmd "autocmd BufWritePre *.sv :lua vim.lsp.buf.format()"
 vim.cmd "autocmd BufWritePre *.py :lua vim.lsp.buf.format()"

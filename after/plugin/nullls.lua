@@ -1,11 +1,15 @@
-require("null-ls").setup({
+local nulls = require("null-ls")
+
+
+nulls.setup({
     sources = {
-        require("null-ls").builtins.formatting.black,
-        require("null-ls").builtins.formatting.verible_verilog_format,
-        -- require("null-ls").builtins.diagnostics.vint,
-        require("null-ls").builtins.formatting.codespell,
-        require("null-ls").builtins.formatting.isort,
-        -- require("null-ls").builtins.formatting.shellharden,
-        require("null-ls").builtins.formatting.prettierd,
+        nulls.builtins.formatting.black,
+        nulls.builtins.formatting.verible_verilog_format,
+        nulls.builtins.formatting.ocamlformat,
+        -- nulls.builtins.diagnostics.vint,
+        nulls.builtins.formatting.codespell,
+        nulls.builtins.formatting.isort,
+        -- nulls.builtins.formatting.shellharden,
+        nulls.builtins.formatting.prettierd,
     },
 })

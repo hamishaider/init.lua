@@ -11,6 +11,15 @@ lsp.ensure_installed({
     'ocamllsp'
 })
 
+-- Setup ocaml
+-- "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "
+lsp.configure('ocamllsp', {
+    cmd = { "ocamllsp" },
+    filetypes = { "ocaml", "reason", "dune" },
+    root_dir = require("lspconfig").util.root_pattern("*.opam", "easy.json", "package.json", ".git", "dune-project",
+        "dune-workspace",
+        ".ocamlformat")
+})
 
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {

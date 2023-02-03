@@ -11,7 +11,6 @@
 !_TAG_PROGRAM_VERSION	5.9.0	/97cd165d/
 ['<S-Tab>']	after/plugin/lsp.lua	/^    ['<S-Tab>'] = cmp.mapping(function(fallback)$/;"	f
 ['<Tab>']	after/plugin/lsp.lua	/^    ['<Tab>'] = cmp.mapping(function(fallback)$/;"	f
-cd_dot_cb	after/plugin/tree.lua	/^local function cd_dot_cb(node)$/;"	f
 error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
 mocha	after/plugin/colors.lua	/^		mocha = function(C)$/;"	f
 save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
