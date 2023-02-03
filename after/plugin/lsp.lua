@@ -15,7 +15,7 @@ lsp.ensure_installed({
 -- "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "
 lsp.configure('ocamllsp', {
     cmd = { "ocamllsp" },
-    filetypes = { "ocaml", "reason", "dune" },
+    filetypes = { "ocaml", "ocaml.menhir", "ocaml.ocamllex", "ocaml.interface", "reason", "dune" },
     root_dir = require("lspconfig").util.root_pattern("*.opam", "easy.json", "package.json", ".git", "dune-project",
         "dune-workspace",
         ".ocamlformat")
