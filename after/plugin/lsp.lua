@@ -4,7 +4,8 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'tsserver',
-    'sumneko_lua',
+    'texlab',
+    -- 'sumneko_lua',
     'rust_analyzer',
     'pyright',
     'svls',
@@ -31,6 +32,20 @@ lsp.configure('sumneko_lua', {
         }
     }
 })
+
+lsp.configure('texlab', {
+    name = "texlab_fancy";
+    log_level = vim.lsp.protocol.MessageType.Log;
+    settings = {
+        latex = {
+            build = {
+                onSave = true;
+            }
+        }
+    }
+})
+
+
 
 
 local cmp = require('cmp')
