@@ -18,8 +18,7 @@ lsp.configure('ocamllsp', {
     cmd = { "ocamllsp" },
     filetypes = { "ocaml", "ocaml.menhir", "ocaml.ocamllex", "ocaml.interface", "reason", "dune" },
     root_dir = require("lspconfig").util.root_pattern("*.opam", "easy.json", "package.json", ".git", "dune-project",
-        "dune-workspace",
-        ".ocamlformat")
+        "dune-workspace", ".ocamlformat")
 })
 
 -- Fix Undefined global 'vim'
@@ -34,18 +33,37 @@ lsp.configure('sumneko_lua', {
 })
 
 lsp.configure('texlab', {
-    name = "texlab_fancy";
-    log_level = vim.lsp.protocol.MessageType.Log;
+    cmd = { "texlab" },
+    filetypes = { "tex", "plaintex", "bib" },
     settings = {
-        latex = {
+        texlab = {
+            rootDirectory = ".",
+            auxDirectory = ".",
             build = {
-                onSave = true;
-            }
+                args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                executable = "latexmk",
+                -- forwardSearchAfter = true,
+                onSave = true
+                -- isContinuous = false
+            },
+            chktex = {
+                onEdit = true,
+                onOpenAndSave = true
+            },
+            diagnosticsDelay = 300,
+            formatterLineLength = 80,
+            forwardSearch = {
+                executable = "zathura",
+                args = { "--synctex-forward", "%l:1:%f", "%p" },
+            },
+            latexFormatter = "latexindent",
+            latexindent = {
+                modifyLineBreaks = false
+            },
+            bibtexFormatter = 'texlab'
         }
     }
 })
-
-
 
 
 local cmp = require('cmp')
