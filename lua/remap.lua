@@ -41,3 +41,6 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader>d", ":bd<CR>");
+
+-- Nvim tree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>");
