@@ -5,6 +5,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     'tsserver',
     -- 'sumneko_lua',
+    'clangd',
     'rust_analyzer',
     'pyright',
     'svls'
