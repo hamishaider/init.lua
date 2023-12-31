@@ -11,6 +11,5 @@ nulls.setup({
         nulls.builtins.formatting.isort,
         -- nulls.builtins.formatting.shellharden,
         nulls.builtins.formatting.prettierd,
-        nulls.builtins.formatting.clang_format,
     },
 })
