@@ -67,6 +67,10 @@ return require('packer').startup(function(use)
         }
     }
 
+    use {
+        "HiPhish/rainbow-delimiters.nvim"
+    }
+
     -- nvim-tree
     use {
         'nvim-tree/nvim-tree.lua',

@@ -1,9 +1,3 @@
-local status, indent = pcall(require, "ibl")
-if (not status) then return end
-
-vim.opt.list = false
-vim.opt.listchars:append "eol: "
-
 local highlight = {
     "RainbowRed",
     "RainbowYellow",
@@ -13,7 +7,6 @@ local highlight = {
     "RainbowViolet",
     "RainbowCyan",
 }
-
 local hooks = require "ibl.hooks"
 -- create the highlight groups in the highlight setup hook, so they are reset
 -- every time the colorscheme changes
@@ -29,10 +22,6 @@ end)
 
 vim.g.rainbow_delimiters = { highlight = highlight }
 
-indent.setup {
-    scope = {
-        highlight = highlight,
-    },
-}
+require("ibl").setup { scope = { highlight = highlight } }
 
 hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
